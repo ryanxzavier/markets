@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from '@/components/Navbar'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <>
+          <Navbar />
+        </>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -81,7 +86,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
+              Learn
             </h2>
             <p className={inter.className}>
               Learn about Next.js in an interactive course with&nbsp;quizzes!
