@@ -19,6 +19,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
 
+        <p>Welcome to Markets App, Login / Signup below to view current market prices</p>
         <Login />
 
 

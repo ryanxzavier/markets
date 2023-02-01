@@ -1,4 +1,4 @@
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field } from 'formik';
 import styles from '../styles/login-form.module.css'
 import React from 'react';
 import users from '../database/users.json'
@@ -14,29 +14,27 @@ const LoginForm = () => {
 
     const [mode, setMode] = React.useState('login');
 
-    const handleLogin = (values, { setSubmitting }) => {
-        const userExists = users.some(
-            (user) => user.username === values.username && user.password === values.password
+    function handleLogin(values) {
+        const user = users.map(
+            u => u.username === values.username && u.password === values.password
         );
-        if (userExists) {
-            alert('Login successful');
-        } else {
-            alert('Incorrect username or password');
-        }
-        setSubmitting(false);
-    };
 
-    const handleSignUp = (values, { setSubmitting }) => {
-        const userExists = users.some((user) => user.username === values.username);
-        if (userExists) {
-            alert('Username already exists');
+        if (user) {
+            console.log('Login successful!');
         } else {
-            const newUser = { username: values.username, password: values.password };
-            setUsers([...users, newUser]);
-            alert('Sign-up successful');
+            console.log('Login failed. Incorrect username or password.');
         }
-        setSubmitting(false);
-    };
+    }
+
+    function handleSignUp(values) {
+        const newUser = {
+            username: values.username,
+            password: values.password,
+        };
+
+        users.push(newUser);
+        console.log('Signup successful!')
+    }
 
     return (
         <div className={styles.login_box + ' p-3'}>
