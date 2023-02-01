@@ -4,11 +4,14 @@ import Navbar from '@/components/Navbar'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Login from '@/components/Login'
+import markets from './markets'
+import Link from 'next/link'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -19,8 +22,13 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
 
-        <p>Welcome to Markets App, Login / Signup below to view current market prices</p>
+        <p className={styles.description}>Welcome to Markets App, Login / Signup below to view current market prices</p>
+
         <Login />
+
+        <Link className={styles.code} href="../markets">
+          View Markets
+        </Link>
 
 
       </main>

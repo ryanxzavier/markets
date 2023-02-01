@@ -7,15 +7,14 @@
   min-height: 100vh;
 }
 
+.button {
+  padding: 20px;
+  margin: 50px;
+}
+
 .description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
   font-family: var(--font-mono);
+  margin-bottom: 20px
 }
 
 .description a {
