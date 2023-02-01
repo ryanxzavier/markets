@@ -27,7 +27,7 @@ export default function Home() {
         <Login />
 
         <Link className={styles.code} href="../markets">
-          View Markets
+          If login demo doesnt work, click here to View Markets
         </Link>
 
 
