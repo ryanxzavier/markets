@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <ul>
             <li>
-                <Link href="../home">
+                <Link href="../">
                     Home
                 </Link>
             </li>
